@@ -13,10 +13,6 @@ import static org.junit.Assert.*;
 
 public class PrimeNumbersTest {
 
-    @Before
-    public void setUp() throws Exception {
-    }
-
     @Test
     public void extractPrimes() throws IOException {
         List<Integer> testData = new ArrayList<>();
@@ -32,10 +28,5 @@ public class PrimeNumbersTest {
 
         assertEquals(testResult, primeNumbers.extractPrimes(testResponse));
     }
-
-    @After
-    public void tearDown() throws Exception {
-    }
-
 
 }
