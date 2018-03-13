@@ -7,7 +7,7 @@ import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
-public class PrimeNumbersTest {
+public class PrimesExtractorTest {
 
     @Test
     public void extractPrimes() throws IOException {
@@ -20,9 +20,9 @@ public class PrimeNumbersTest {
         RandomNumbersResponse testResponse = new RandomNumbersResponse();
         testResponse.setData(testData);
 
-        PrimeNumbers primeNumbers = new PrimeNumbers();
+        PrimesExtractor primesExtractor = new PrimesExtractor();
 
-        assertEquals(testResult, primeNumbers.extractPrimes(testResponse));
+        assertEquals(testResult, primesExtractor.extract(testResponse));
     }
 
 }

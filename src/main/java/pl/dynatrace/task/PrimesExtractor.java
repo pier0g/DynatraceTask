@@ -5,9 +5,9 @@ import org.apache.commons.math3.primes.Primes;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
-public class PrimeNumbers {
+public class PrimesExtractor {
 
-    public TreeSet extractPrimes(RandomNumbersResponse response) {
+    public TreeSet extract(RandomNumbersResponse response) {
         return response.getData().stream().filter(Primes::isPrime).collect(Collectors.toCollection(TreeSet::new));
     }
 }

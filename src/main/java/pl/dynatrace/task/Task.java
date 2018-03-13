@@ -9,8 +9,8 @@ public class Task {
         RandomNumberGeneratorClient randomNumberGeneratorClient = new RandomNumberGeneratorClient();
         RandomNumbersResponse response = randomNumberGeneratorClient.readRandomNumbers();
 
-        PrimeNumbers primeNumbers = new PrimeNumbers();
+        PrimesExtractor primesExtractor = new PrimesExtractor();
         System.out.println("Data: " + response.getData());
-        System.out.println("Prime numbers: " + primeNumbers.extractPrimes(response));
+        System.out.println("Prime numbers: " + primesExtractor.extract(response));
     }
 }

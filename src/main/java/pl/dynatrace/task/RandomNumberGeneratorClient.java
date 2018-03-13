@@ -1,35 +1,22 @@
 package pl.dynatrace.task;
 
 import com.google.gson.Gson;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.Authenticator;
-import java.net.HttpURLConnection;
-import java.net.PasswordAuthentication;
-import java.net.URL;
+import org.javalite.http.Http;
 
 public class RandomNumberGeneratorClient {
-    private static final String sURL = "http://dt-gwitczak-recruitment.westeurope.cloudapp.azure.com:8080/rest/task";
 
+    private static final String URL = "http://dt-gwitczak-recruitment.westeurope.cloudapp.azure.com:8080/rest/task";
+    private static final String USERNAME = "candidate";
+    private static final String PASSWORD = "abc123";
 
-    public RandomNumbersResponse readRandomNumbers() throws IOException {
+    private final Gson gson;
 
-        Authenticator.setDefault(new Authenticator() {
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("candidate", "abc123".toCharArray());
-            }
-        });
+    RandomNumberGeneratorClient() {
+        gson = new Gson();
+    }
 
-        URL url = new URL(sURL);
-        HttpURLConnection request = (HttpURLConnection) url.openConnection();
-        request.connect();
-
-        Gson gson = new Gson();
-        RandomNumbersResponse response = gson.fromJson(new InputStreamReader((InputStream) request.getContent()), RandomNumbersResponse.class);
-
-        return response;
+    public RandomNumbersResponse readRandomNumbers(){
+        return gson.fromJson(Http.get(URL).basic(USERNAME, PASSWORD).text(), RandomNumbersResponse.class);
     }
 
 }
