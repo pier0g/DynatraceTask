@@ -2,7 +2,6 @@ package pl.dynatrace.task;
 
 import org.apache.commons.math3.primes.Primes;
 
-import java.io.IOException;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 

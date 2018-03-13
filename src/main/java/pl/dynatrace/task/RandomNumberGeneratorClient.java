@@ -1,12 +1,14 @@
 package pl.dynatrace.task;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.*;
+import java.net.Authenticator;
+import java.net.HttpURLConnection;
+import java.net.PasswordAuthentication;
+import java.net.URL;
 
 public class RandomNumberGeneratorClient {
     private static final String sURL = "http://dt-gwitczak-recruitment.westeurope.cloudapp.azure.com:8080/rest/task";

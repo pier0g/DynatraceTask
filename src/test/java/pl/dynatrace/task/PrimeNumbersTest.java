@@ -1,15 +1,11 @@
 package pl.dynatrace.task;
 
-import org.apache.commons.math3.primes.Primes;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Collectors;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class PrimeNumbersTest {
 
