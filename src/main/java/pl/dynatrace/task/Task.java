@@ -1,16 +1,11 @@
 package pl.dynatrace.task;
 
-import java.io.IOException;
-
+import static javafx.application.Application.launch;
 
 public class Task {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
-        RandomNumberGeneratorClient randomNumberGeneratorClient = new RandomNumberGeneratorClient();
-        RandomNumbersResponse response = randomNumberGeneratorClient.readRandomNumbers();
+        launch(ApplicationWindow.class, args);
 
-        PrimesExtractor primesExtractor = new PrimesExtractor();
-        System.out.println("Data: " + response.getData());
-        System.out.println("Prime numbers: " + primesExtractor.extract(response));
     }
 }

@@ -2,7 +2,6 @@ package pl.dynatrace.task;
 
 import org.junit.Test;
 
-import java.io.IOException;
 import java.util.*;
 
 import static org.junit.Assert.assertEquals;
@@ -10,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class PrimesExtractorTest {
 
     @Test
-    public void extractPrimes() throws IOException {
+    public void extractPrimes() {
         List<Integer> testData = new ArrayList<>();
         testData.addAll(Arrays.asList(8, 90, 130, 109, 13, 38, 60, 677, 13, 999));
 
